@@ -1,0 +1,41 @@
+name: Build IT3203 Assignment 1 PowerPoint
+
+on:
+  push:
+    paths:
+      - 'it3203-assignment1-http-evolution/generate_pptx.py'
+      - '.github/workflows/build-it3203-pptx.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install PowerPoint library
+        run: pip install python-pptx
+
+      - name: Generate PowerPoint
+        run: python it3203-assignment1-http-evolution/generate_pptx.py
+
+      - name: Commit PowerPoint file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add it3203-assignment1-http-evolution/IT3203_Assignment1_HTTP_Evolution_Nasir_Hassan.pptx
+          if git diff --cached --quiet; then
+            echo "PowerPoint already up to date."
+          else
+            git commit -m "Add downloadable IT3203 Assignment 1 PowerPoint"
+            git push
+          fi
