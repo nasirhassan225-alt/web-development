@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IT 3203 Assignment 1 — HTTP Evolution</title>
+  <style>
+    :root{--navy:#0b1f33;--blue:#1f6feb;--green:#0f766e;--orange:#c2410c;--gray:#f4f7fb;--line:#d8e1ee;--text:#1f2937;}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--text);line-height:1.55;}
+    header{background:var(--navy);color:#fff;padding:44px 7vw 34px;}
+    header h1{margin:0 0 8px;font-size:clamp(30px,4vw,50px);}
+    header p{max-width:900px;font-size:18px;margin:8px 0;}
+    main{padding:28px 7vw 60px;max-width:1180px;margin:auto;}
+    h2{color:var(--navy);border-bottom:3px solid var(--blue);padding-bottom:7px;margin-top:34px;}
+    h3{color:var(--navy);margin-bottom:5px;}
+    .meta,.card{background:var(--gray);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+    .callout{border-left:5px solid var(--blue);background:#eef5ff;padding:14px 16px;margin:16px 0;border-radius:8px;}
+    .timeline{display:grid;gap:10px;}
+    .event{border-left:5px solid var(--green);padding:10px 14px;background:#f0fdfa;border-radius:8px;}
+    table{border-collapse:collapse;width:100%;margin:14px 0;background:#fff;}
+    th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left;}
+    th{background:#eaf2ff;color:var(--navy);}
+    footer{font-size:13px;color:#64748b;margin-top:40px;}
+  </style>
+</head>
+<body>
+<header>
+  <h1>HTTP: The Protocol That Carries the Web</h1>
+  <p><strong>IT 3203 Assignment 1: Research and Learn Web Evolution</strong></p>
+  <p>Prepared by Nasir Hassan — Fall 2026</p>
+</header>
+<main>
+  <section class="meta">
+    <h2>Executive overview</h2>
+    <p>This report studies <strong>HTTP, the Hypertext Transfer Protocol</strong>, as one technical component of the World Wide Web. HTTP matters because it is the request-and-response language used when browsers, servers, mobile apps, APIs, and content delivery networks exchange web data.</p>
+    <p>The main finding is that HTTP has evolved from a one-line request in HTTP/0.9 into a layered modern system that supports headers, status codes, caching, cookies, security policies, APIs, streaming, multiplexing, TLS encryption, and QUIC-based HTTP/3. The core purpose remains the same: a client asks for a resource, and a server responds.</p>
+  </section>
+
+  <h2>Research scope and learning goals</h2>
+  <div class="grid">
+    <div class="card"><h3>Selected web component</h3><p>The chosen topic is HTTP because it connects browsers, servers, URLs, web pages, APIs, cookies, caching, security, and performance.</p></div>
+    <div class="card"><h3>Learning goal</h3><p>A high school student should be able to explain what HTTP does, how it changed over time, and why modern sites use HTTPS, HTTP/2, and HTTP/3.</p></div>
+    <div class="card"><h3>Main idea</h3><p>HTTP is not a website, browser, or server. It is the communication rule set that lets those systems understand one another.</p></div>
+  </div>
+
+  <h2>Where HTTP fits in a web request</h2>
+  <p>When a user types a URL, the browser identifies the site, opens a connection, sends an HTTP request, receives an HTTP response, and renders the returned content. The page may require many additional HTTP requests for images, CSS, JavaScript, fonts, videos, and data.</p>
+  <table><tr><th>Step</th><th>What happens</th></tr><tr><td>1. User enters a URL</td><td>The browser identifies the scheme, host, and resource path.</td></tr><tr><td>2. Browser connects</td><td>DNS, TCP or QUIC, and TLS prepare a secure path to the server.</td></tr><tr><td>3. HTTP request</td><td>The browser sends a method, path, headers, and sometimes a body.</td></tr><tr><td>4. HTTP response</td><td>The server returns a status code, headers, and content or data.</td></tr></table>
+
+  <h2>HTTP as a request and response conversation</h2>
+  <p>HTTP works like a structured conversation. A request says what the client wants; a response tells whether the server could provide it and includes the data or an error explanation.</p>
+  <div class="grid"><div class="card"><h3>Request</h3><p>Example: <code>GET /index.html HTTP/1.1</code>. The browser asks for a resource and adds headers such as Host, Accept, and User-Agent.</p></div><div class="card"><h3>Response</h3><p>Example: <code>HTTP/1.1 200 OK</code>. The server sends status information, headers such as Content-Type, and the requested body.</p></div></div>
+
+  <h2>Message parts that make HTTP useful</h2>
+  <div class="grid">
+    <div class="card"><h3>Methods</h3><p>GET, POST, PUT, PATCH, and DELETE describe the action the client wants.</p></div>
+    <div class="card"><h3>Status codes</h3><p>Codes such as 200, 301, 404, and 500 provide quick results that software can understand.</p></div>
+    <div class="card"><h3>Headers</h3><p>Headers carry metadata about content type, compression, cookies, caching, authentication, and security.</p></div>
+    <div class="card"><h3>Body</h3><p>The body carries HTML, JSON, images, files, or form data when a message needs content.</p></div>
+  </div>
+
+  <h2>Origin story and major milestones</h2>
+  <div class="timeline">
+    <div class="event"><strong>1989–1991:</strong> Tim Berners-Lee and colleagues at CERN develop the early World Wide Web pieces: HTML, HTTP, a browser, and a web server.</div>
+    <div class="event"><strong>1991:</strong> HTTP/0.9 uses a one-line GET request and returns a hypertext document.</div>
+    <div class="event"><strong>1996:</strong> HTTP/1.0 documents status codes, headers, and multiple content types.</div>
+    <div class="event"><strong>1997–1999:</strong> HTTP/1.1 improves persistent connections, virtual hosting, caching, compression, and chunked transfer.</div>
+    <div class="event"><strong>2015:</strong> HTTP/2 introduces binary framing, multiplexing, and header compression.</div>
+    <div class="event"><strong>2022:</strong> The modern HTTP RFC set updates shared semantics, HTTP/1.1, HTTP/2, and HTTP/3.</div>
+  </div>
+
+  <h2>HTTP/0.9: the one-line protocol</h2>
+  <p>HTTP/0.9 was extremely simple. A client sent a line such as <code>GET /mypage.html</code>, and the server returned the document. There were no status codes, no headers, no content negotiation, and no official way to describe non-HTML files. This matched the early web because the goal was only to retrieve hypertext documents.</p>
+
+  <h2>HTTP/1.0 and HTTP/1.1</h2>
+  <p>HTTP/1.0 made the protocol more practical by adding protocol versioning, status codes, headers, and support for different media types. HTTP/1.1 then improved performance and reliability through persistent connections, virtual hosting with the Host header, better caching, compression, range requests, and chunked transfer encoding.</p>
+  <div class="callout">HTTP/1.1 became durable because it balanced simplicity, compatibility, and enough features for commercial web growth.</div>
+
+  <h2>Security: HTTPS changed expectations</h2>
+  <p>HTTP originally sent data in clear text. HTTPS adds TLS so the browser can authenticate the site and encrypt traffic. This is essential for passwords, payment information, private messages, cookies, and forms. Today, browsers treat HTTPS as the normal expectation for trustworthy sites.</p>
+
+  <h2>HTTP as a platform for applications</h2>
+  <p>Modern web applications depend on HTTP for APIs and real-time features. REST APIs use HTTP methods and status codes. JSON bodies carry structured data. WebSocket and Server-Sent Events extend web communication beyond simple document loading.</p>
+
+  <h2>HTTP/2: performance redesign</h2>
+  <p>HTTP/2 keeps the same meanings as HTTP/1.1 but changes the wire format. It uses binary frames and multiplexed streams so several requests can share one connection at the same time. Header compression reduces repeated metadata. These changes target the performance problems created by pages that require many resources.</p>
+
+  <h2>HTTP/3 and QUIC</h2>
+  <p>HTTP/3 keeps HTTP semantics but runs over QUIC instead of TCP. QUIC is a secure transport over UDP. It supports multiplexing, encryption, and connection migration, which can be helpful for mobile devices that move between networks. HTTP/3 was designed to reduce transport-level head-of-line blocking that can hurt HTTP/2 over TCP.</p>
+
+  <h2>Version comparison</h2>
+  <table><tr><th>Version</th><th>Main contribution</th><th>Key limitation</th></tr><tr><td>HTTP/0.9</td><td>Simple document retrieval</td><td>No headers, status codes, or media types</td></tr><tr><td>HTTP/1.0</td><td>Headers, status codes, content types</td><td>Many short connections</td></tr><tr><td>HTTP/1.1</td><td>Persistent connections, caching, Host header</td><td>Head-of-line blocking and manual optimization pressure</td></tr><tr><td>HTTP/2</td><td>Binary framing, multiplexing, compression</td><td>Still depends on TCP ordering</td></tr><tr><td>HTTP/3</td><td>QUIC transport, stream multiplexing, connection migration</td><td>Deployment depends on UDP/QUIC network support</td></tr></table>
+
+  <h2>Current status</h2>
+  <p>In 2026, the web is mixed. HTTP/1.1 remains important for compatibility, HTTP/2 is common for production websites, and HTTP/3 continues to grow through browser, server, and CDN support. Adoption statistics vary by measurement method, because supporting a protocol is not the same as measuring the share of actual user traffic.</p>
+
+  <h2>People and organizations</h2>
+  <div class="grid"><div class="card"><h3>CERN and Tim Berners-Lee</h3><p>HTTP began as part of the early World Wide Web work at CERN.</p></div><div class="card"><h3>IETF HTTP Working Group</h3><p>The IETF standardizes HTTP through RFCs and ongoing working-group discussions.</p></div><div class="card"><h3>Browser vendors</h3><p>Browser teams implement protocol negotiation, security behavior, caching, and compatibility.</p></div><div class="card"><h3>CDNs and cloud providers</h3><p>Large edge networks help deploy HTTP/2 and HTTP/3 globally.</p></div></div>
+
+  <h2>Future directions</h2>
+  <p>Future HTTP work is likely to focus on stronger privacy, simpler deployment, better prioritization, improved browser performance, QUIC growth, and compatibility across enterprise networks. HTTP will remain important because it sits under web pages, APIs, mobile apps, authentication systems, e-commerce, streaming, and cloud services.</p>
+
+  <h2>Conclusion</h2>
+  <p>HTTP is the web's durable coordination layer. It changed from a tiny hypertext retrieval tool into a full protocol family for secure, high-performance, application-driven communication. The reason HTTP survived is that it kept its basic request-response model while adding the features needed for modern web life.</p>
+
+  <h2>References and good resources</h2>
+  <ol>
+    <li>MDN Web Docs. “Evolution of HTTP.”</li>
+    <li>W3C. “Information Management: A Proposal.”</li>
+    <li>RFC 9110. “HTTP Semantics.”</li>
+    <li>RFC 9112. “HTTP/1.1.”</li>
+    <li>RFC 9113. “HTTP/2.”</li>
+    <li>RFC 9114. “HTTP/3.”</li>
+    <li>RFC 9000. “QUIC: A UDP-Based Multiplexed and Secure Transport.”</li>
+    <li>W3Techs HTTP/2 and HTTP/3 usage statistics.</li>
+    <li>Cloudflare Blog. “HTTP/3: the past, the present, and the future.”</li>
+  </ol>
+  <footer>This web version supports the submitted PowerPoint research report for IT 3203 Assignment 1.</footer>
+</main>
+</body>
+</html>
