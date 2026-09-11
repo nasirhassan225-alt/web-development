@@ -7,6 +7,12 @@
 
 This folder contains the GitHub Pages web version of the research report. The PowerPoint file is the main D2L submission.
 
+## PowerPoint
+
+**[Download the complete PowerPoint presentation](./IT3203_Assignment1_HTTP_Evolution_Nasir_Hassan.pptx)**
+
+The downloadable `.pptx` contains the full slide-based Assignment 1 research report.
+
 ## Report focus
 
 This project studies one technical component of the World Wide Web: HTTP. It explains HTTP's role, purpose, history, recent developments, current status, and future direction.
@@ -26,7 +32,7 @@ This project studies one technical component of the World Wide Web: HTTP. It exp
 
 ## GitHub Pages
 
-After GitHub Pages finishes deploying, the web version should be available at:
+Web version:
 
 https://nasirhassan225-alt.github.io/web-development/it3203-assignment1-http-evolution/
 
