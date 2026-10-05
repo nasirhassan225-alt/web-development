@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="240" viewBox="0 0 1000 240" role="img" aria-labelledby="title desc">
+<title id="title">HTTP evolution timeline</title>
+<desc id="desc">Timeline showing HTTP 0.9, 1.0, 1.1, 2, and 3 from the early web through modern QUIC-based HTTP.</desc>
+<rect width="1000" height="240" fill="#f5f7fb"/>
+<line x1="95" y1="118" x2="905" y2="118" stroke="#0b1f33" stroke-width="4"/>
+<g font-family="Arial" text-anchor="middle">
+  <circle cx="120" cy="118" r="16" fill="#1f6feb"/>
+  <text x="120" y="75" font-size="22" fill="#0b1f33">HTTP/0.9</text>
+  <text x="120" y="160" font-size="16" fill="#5f6b7a">One-line GET</text>
+  <circle cx="310" cy="118" r="16" fill="#1f6feb"/>
+  <text x="310" y="75" font-size="22" fill="#0b1f33">HTTP/1.0</text>
+  <text x="310" y="160" font-size="16" fill="#5f6b7a">Headers + status</text>
+  <circle cx="500" cy="118" r="16" fill="#1f6feb"/>
+  <text x="500" y="75" font-size="22" fill="#0b1f33">HTTP/1.1</text>
+  <text x="500" y="160" font-size="16" fill="#5f6b7a">Persistent connections</text>
+  <circle cx="690" cy="118" r="16" fill="#0f766e"/>
+  <text x="690" y="75" font-size="22" fill="#0b1f33">HTTP/2</text>
+  <text x="690" y="160" font-size="16" fill="#5f6b7a">Multiplexing</text>
+  <circle cx="880" cy="118" r="16" fill="#0f766e"/>
+  <text x="880" y="75" font-size="22" fill="#0b1f33">HTTP/3</text>
+  <text x="880" y="160" font-size="16" fill="#5f6b7a">QUIC transport</text>
+</g>
+</svg>
