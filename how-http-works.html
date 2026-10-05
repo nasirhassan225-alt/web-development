@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How HTTP Works — IT 3203 project about the evolution and operation of HTTP.">
+  <title>How HTTP Works | IT 3203</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Shared navigation keeps all Milestone #1 pages consistent. -->
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand"><a href="index.html">HTTP: The Protocol That Carries the Web</a></div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">HTTP Evolution</a></li>
+        <li><a href="how-http-works.html" aria-current="page">How HTTP Works</a></li>
+        <li><a href="modern-http.html">Modern HTTP</a></li>
+        <li><a href="concepts.html">Key Concepts</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section id="hero">
+  <p class="eyebrow">Topic Page 2</p>
+  <h1>How HTTP Works</h1>
+  <p class="lead">A browser asks for something, a server processes the request, and the server returns a structured response.</p>
+</section>
+
+<figure class="figure">
+  <img src="images/http-request-response.svg" alt="Browser and server exchanging an HTTP request and response.">
+  <figcaption>The request/response pattern is the central idea behind HTTP.</figcaption>
+</figure>
+
+<section>
+  <h2>A Typical Web Request</h2>
+  <ol>
+    <li>The user enters a URL or clicks a link.</li>
+    <li>The browser locates the destination server and prepares a network connection.</li>
+    <li>The browser sends an HTTP request with a method, target, headers, and sometimes a body.</li>
+    <li>The server processes the request and chooses a result.</li>
+    <li>The server sends an HTTP response with a status code, headers, and optional body.</li>
+    <li>The browser uses the returned content and may make more HTTP requests for CSS, JavaScript, images, fonts, or API data.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Request and Response Anatomy</h2>
+  <div class="grid">
+    <article class="card"><h3>Start line</h3><p>A request begins with a method and target, such as <code>GET /products.html</code>. A response begins with a status such as <code>200 OK</code>.</p></article>
+    <article class="card"><h3>Headers</h3><p>Headers describe metadata such as content type, caching rules, authentication, cookies, accepted formats, and compression.</p></article>
+    <article class="card"><h3>Body</h3><p>The body carries the payload when needed. It might contain HTML, JSON, form data, an uploaded file, or another media type.</p></article>
+  </div>
+</section>
+
+<section>
+  <h2>Common HTTP Methods</h2>
+  <table>
+    <thead><tr><th>Method</th><th>Typical Purpose</th><th>Simple Example</th></tr></thead>
+    <tbody>
+      <tr><td>GET</td><td>Retrieve a resource</td><td>Load an article or API record</td></tr>
+      <tr><td>POST</td><td>Submit data for processing</td><td>Send a form or create a record</td></tr>
+      <tr><td>PUT</td><td>Replace a resource representation</td><td>Replace saved profile information</td></tr>
+      <tr><td>PATCH</td><td>Apply a partial update</td><td>Change one account setting</td></tr>
+      <tr><td>DELETE</td><td>Request removal of a resource</td><td>Delete a stored record</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Status Code Families</h2>
+  <ul>
+    <li><strong>1xx — Informational:</strong> the exchange is continuing.</li>
+    <li><strong>2xx — Success:</strong> the request worked, such as <code>200 OK</code>.</li>
+    <li><strong>3xx — Redirection:</strong> another location or follow-up step is required.</li>
+    <li><strong>4xx — Client error:</strong> the request cannot be fulfilled as sent, such as <code>404 Not Found</code>.</li>
+    <li><strong>5xx — Server error:</strong> the server failed while handling the request, such as <code>500 Internal Server Error</code>.</li>
+  </ul>
+</section>
+
+<section class="callout">
+  <h2>HTTP Is Stateless</h2>
+  <p>HTTP is designed so each request can be understood on its own. Websites create continuity across requests with tools such as cookies, session identifiers, tokens, browser storage, and server-side databases.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p><strong>IT 3203 Web Development — Project Milestone #1</strong></p>
+    <p>This website is a class project for Kennesaw State University. Visit the <a href="https://ksuweb.github.io/IT3203/">IT 3203 class website</a>.</p>
+    <p>Prepared by Nasir Hassan • Fall 2026</p>
+  </div>
+</footer>
+</body>
+</html>
