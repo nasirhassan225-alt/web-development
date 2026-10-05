@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern HTTP — IT 3203 project about the evolution and operation of HTTP.">
+  <title>Modern HTTP | IT 3203</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Shared navigation keeps all Milestone #1 pages consistent. -->
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand"><a href="index.html">HTTP: The Protocol That Carries the Web</a></div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">HTTP Evolution</a></li>
+        <li><a href="how-http-works.html">How HTTP Works</a></li>
+        <li><a href="modern-http.html" aria-current="page">Modern HTTP</a></li>
+        <li><a href="concepts.html">Key Concepts</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section id="hero">
+  <p class="eyebrow">Topic Page 3</p>
+  <h1>Modern HTTP</h1>
+  <p class="lead">Modern web delivery combines HTTP semantics with stronger security, better multiplexing, and global infrastructure.</p>
+</section>
+
+<section>
+  <h2>HTTPS and TLS</h2>
+  <p>HTTPS is HTTP carried over an encrypted and authenticated TLS connection. Encryption helps prevent other parties on the network from reading or changing the contents in transit, while certificate-based authentication helps the browser verify the server it reached.</p>
+  <div class="grid">
+    <article class="card"><h3>Confidentiality</h3><p>Encryption protects sensitive traffic such as passwords, forms, cookies, private messages, and payment data while it travels across networks.</p></article>
+    <article class="card"><h3>Integrity</h3><p>TLS helps detect tampering so the browser is less likely to accept modified content as legitimate.</p></article>
+    <article class="card"><h3>Authentication</h3><p>Certificates help the browser establish that it is communicating with the intended site.</p></article>
+  </div>
+</section>
+
+<section>
+  <h2>HTTP/2: Multiplexed Streams</h2>
+  <p>HTTP/2 changed how HTTP messages are encoded and transported while preserving HTTP semantics. It divides messages into binary frames and associates requests and responses with streams. Multiple streams can share one connection, reducing the need for many separate TCP connections.</p>
+  <ul>
+    <li>Binary framing gives messages a structured wire format.</li>
+    <li>Multiplexing allows several exchanges to progress over one connection.</li>
+    <li>HPACK header compression reduces repeated metadata overhead.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>HTTP/3 and QUIC</h2>
+  <p>HTTP/3 uses QUIC instead of TCP. QUIC runs over UDP and provides transport features such as reliability, stream multiplexing, encryption, and connection identification. Because its streams are more independent, one lost packet does not have to stall unrelated application streams in the same way a single ordered TCP byte stream can.</p>
+  <table>
+    <thead><tr><th>Feature</th><th>HTTP/2</th><th>HTTP/3</th></tr></thead>
+    <tbody>
+      <tr><td>Transport</td><td>TCP</td><td>QUIC over UDP</td></tr>
+      <tr><td>Multiplexing</td><td>HTTP/2 streams over one TCP connection</td><td>QUIC streams with greater transport independence</td></tr>
+      <tr><td>Security</td><td>Normally deployed with TLS</td><td>Cryptographic protection is integrated into QUIC</td></tr>
+      <tr><td>Network changes</td><td>Connection usually tied closely to the TCP path</td><td>Connection IDs can support migration between network paths</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Browsers, Servers, and CDNs</h2>
+  <p>Protocol deployment depends on multiple systems working together. Browsers negotiate supported protocol versions. Web servers configure certificates, redirects, compression, caching, and application responses. Content delivery networks place resources closer to users and can terminate modern HTTP connections at edge locations around the world.</p>
+</section>
+
+<section class="callout">
+  <h2>Current Direction</h2>
+  <p>The long-term pattern is not simply “replace the old version.” HTTP/1.1, HTTP/2, and HTTP/3 continue to coexist because the public web values compatibility. Newer versions focus on secure transport, lower latency, better prioritization, and more reliable performance across changing network conditions.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p><strong>IT 3203 Web Development — Project Milestone #1</strong></p>
+    <p>This website is a class project for Kennesaw State University. Visit the <a href="https://ksuweb.github.io/IT3203/">IT 3203 class website</a>.</p>
+    <p>Prepared by Nasir Hassan • Fall 2026</p>
+  </div>
+</footer>
+</body>
+</html>
