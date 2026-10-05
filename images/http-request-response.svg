@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+<title id="title">HTTP request and response diagram</title>
+<desc id="desc">A browser sends an HTTP request to a web server and the server sends an HTTP response back to the browser.</desc>
+<rect width="900" height="300" fill="#f5f7fb"/>
+<rect x="60" y="85" width="220" height="120" rx="16" fill="#ffffff" stroke="#0b1f33" stroke-width="3"/>
+<text x="170" y="135" text-anchor="middle" font-family="Arial" font-size="26" fill="#0b1f33">Browser / Client</text>
+<text x="170" y="170" text-anchor="middle" font-family="Arial" font-size="18" fill="#5f6b7a">Requests a resource</text>
+<rect x="620" y="85" width="220" height="120" rx="16" fill="#ffffff" stroke="#0b1f33" stroke-width="3"/>
+<text x="730" y="135" text-anchor="middle" font-family="Arial" font-size="26" fill="#0b1f33">Web Server</text>
+<text x="730" y="170" text-anchor="middle" font-family="Arial" font-size="18" fill="#5f6b7a">Returns a result</text>
+<line x1="290" y1="120" x2="605" y2="120" stroke="#1f6feb" stroke-width="5"/>
+<polygon points="605,120 585,108 585,132" fill="#1f6feb"/>
+<text x="447" y="100" text-anchor="middle" font-family="Arial" font-size="20" fill="#174ea6">HTTP Request</text>
+<line x1="610" y1="175" x2="295" y2="175" stroke="#0f766e" stroke-width="5"/>
+<polygon points="295,175 315,163 315,187" fill="#0f766e"/>
+<text x="452" y="210" text-anchor="middle" font-family="Arial" font-size="20" fill="#0f766e">HTTP Response</text>
+</svg>
