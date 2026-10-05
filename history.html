@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HTTP Evolution — IT 3203 project about the evolution and operation of HTTP.">
+  <title>HTTP Evolution | IT 3203</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Shared navigation keeps all Milestone #1 pages consistent. -->
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand"><a href="index.html">HTTP: The Protocol That Carries the Web</a></div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html" aria-current="page">HTTP Evolution</a></li>
+        <li><a href="how-http-works.html">How HTTP Works</a></li>
+        <li><a href="modern-http.html">Modern HTTP</a></li>
+        <li><a href="concepts.html">Key Concepts</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section id="hero">
+  <p class="eyebrow">Topic Page 1</p>
+  <h1>HTTP Evolution</h1>
+  <p class="lead">HTTP grew by preserving its basic request/response model while improving how messages are described and transported.</p>
+</section>
+
+<figure class="figure">
+  <img src="images/http-evolution.svg" alt="Timeline of HTTP versions from HTTP 0.9 through HTTP 3.">
+  <figcaption>Major HTTP generations solved different limitations of the growing World Wide Web.</figcaption>
+</figure>
+
+<section>
+  <h2>From a Simple Web to a Global Platform</h2>
+  <div class="timeline">
+    <article><h3>1989–1991: The early World Wide Web</h3><p>Tim Berners-Lee's work at CERN connected several ideas: hypertext documents, URLs, a browser, a web server, and HTTP for exchanging resources. HTTP's original job was simple—ask for a document and receive it.</p></article>
+    <article><h3>HTTP/0.9: the one-line protocol</h3><p>The early protocol used a request such as <code>GET /index.html</code>. There were no standard response headers, status codes, or content types. That was enough when the Web mainly delivered simple hypertext documents.</p></article>
+    <article><h3>HTTP/1.0: metadata arrives</h3><p>HTTP/1.0 added protocol versions, response status codes, and headers. A response could identify its media type, allowing the Web to handle images and other formats in a predictable way.</p></article>
+    <article><h3>HTTP/1.1: practical web-scale improvements</h3><p>HTTP/1.1 improved persistent connections, virtual hosting through the Host header, caching, content negotiation, range requests, and transfer handling. It became a durable foundation for commercial web growth.</p></article>
+    <article><h3>HTTP/2: a new way to move the same meanings</h3><p>HTTP/2 introduced binary framing, streams, multiplexing, and header compression. The meaning of methods, status codes, and headers stayed recognizable while the transport of messages became more efficient.</p></article>
+    <article><h3>HTTP/3: HTTP over QUIC</h3><p>HTTP/3 maps HTTP semantics onto QUIC rather than TCP. QUIC supports independent streams, integrated security, and connection features that are useful on modern and mobile networks.</p></article>
+  </div>
+</section>
+
+<section>
+  <h2>Version Comparison</h2>
+  <table>
+    <thead><tr><th>Version</th><th>Main Improvement</th><th>Remaining Limitation</th></tr></thead>
+    <tbody>
+      <tr><td>HTTP/0.9</td><td>Very simple document retrieval</td><td>No headers, status codes, or rich media metadata</td></tr>
+      <tr><td>HTTP/1.0</td><td>Headers, status codes, and content types</td><td>Connections were often short-lived and inefficient</td></tr>
+      <tr><td>HTTP/1.1</td><td>Persistent connections, Host, stronger caching</td><td>Performance pressure when many resources share connections</td></tr>
+      <tr><td>HTTP/2</td><td>Binary framing, multiplexing, header compression</td><td>Still relies on TCP's ordered byte stream</td></tr>
+      <tr><td>HTTP/3</td><td>QUIC transport with independent streams and connection migration</td><td>Deployment depends on QUIC/UDP support across networks</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="callout">
+  <h2>Big Historical Lesson</h2>
+  <p>HTTP succeeded because newer versions did not force web developers to invent a completely different application language. The protocol kept familiar methods, status codes, fields, and resource concepts while changing how efficiently and securely messages travel.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p><strong>IT 3203 Web Development — Project Milestone #1</strong></p>
+    <p>This website is a class project for Kennesaw State University. Visit the <a href="https://ksuweb.github.io/IT3203/">IT 3203 class website</a>.</p>
+    <p>Prepared by Nasir Hassan • Fall 2026</p>
+  </div>
+</footer>
+</body>
+</html>
